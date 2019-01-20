@@ -1,0 +1,165 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'recipe' # Used in routes, e.g. /admin/collections/recipe
+    label: 'Recipe' # Used in the UI
+    folder: 'src/pages/recipes' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template i.e. title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'recipe' }
+
+      - label: 'Metadata'
+        name: 'metadata'
+        widget: 'object'
+        fields:
+          - { label: 'Date', name: 'date', widget: 'datetime' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Total Cost', name: 'totalCost', widget: 'number' }
+          - {
+              label: 'Person Servings',
+              name: 'personServings',
+              widget: 'number',
+            }
+          - {
+              label: 'Actual Servings',
+              name: 'actualServings',
+              widget: 'number',
+            }
+
+      - label: 'Photo'
+        name: 'photo'
+        widget: 'object'
+        fields:
+          - { label: 'Text', name: 'text', widget: 'string' }
+          - { label: 'URL', name: 'url', widget: 'image' }
+
+      - label: 'Ingredients'
+        name: 'ingredients'
+        widget: 'list'
+        fields:
+          - label: 'Ingredient Group'
+            name: 'ingredientGroup'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Ingredient'
+                name: 'ingredient'
+                widget: 'object'
+                fields:
+                  - { label: 'Amount', name: 'amount', widget: 'number' }
+                  - label: 'Unit'
+                    name: 'unit'
+                    widget: 'select'
+                    options:
+                      [
+                        '',
+                        'tsp',
+                        'tbsp',
+                        'fl',
+                        'cup',
+                        'pint',
+                        'quart',
+                        'gallon',
+                        'ml',
+                        'l',
+                        'lb',
+                        'oz',
+                        'mg',
+                        'g',
+                        'kg',
+                        'mm',
+                        'cm',
+                        'm',
+                        'in',
+                        'small',
+                        'medium',
+                        'large',
+                      ]
+                  - { label: 'Name', name: 'name', widget: 'string' }
+                  - { label: 'Price', name: 'price', widget: 'number' }
+                  - {
+                      label: 'Substitutions/Notes',
+                      name: 'notes',
+                      widget: 'string',
+                    }
+
+      - label: 'Directions'
+        name: 'directions'
+        widget: 'list'
+        fields:
+          - label: 'Category'
+            name: 'categories'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - label: 'Steps'
+                name: 'steps'
+                widget: 'list'
+                fields:
+                  - label: 'Step'
+                    name: 'step'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Text', name: 'text', widget: 'string' }
+                      - { label: 'Tips', name: 'tips', widget: 'string' }
+
+      - label: 'Nutrition Facts'
+        name: 'nutrition'
+        widget: 'object'
+        fields:
+          - label: 'Serving Size'
+            name: 'text'
+            widget: 'object'
+            fields:
+              - { label: 'Amount', name: 'amount', widget: 'number' }
+              - label: 'Unit'
+                name: 'unit'
+                widget: 'select'
+                options:
+                  [
+                    '',
+                    'tsp',
+                    'tbsp',
+                    'fl',
+                    'cup',
+                    'pint',
+                    'quart',
+                    'gallon',
+                    'ml',
+                    'l',
+                    'lb',
+                    'oz',
+                    'mg',
+                    'g',
+                    'kg',
+                    'mm',
+                    'cm',
+                    'm',
+                    'in',
+                    'small',
+                    'medium',
+                    'large',
+                  ]
+          - {
+              label: 'Number of Servings',
+              name: 'numServings',
+              widget: 'number',
+            }
+          - { label: 'Grams Carbs', name: 'gramsCarbs', widget: 'number' }
+          - { label: 'Grams Protein', name: 'gramsProtein', widget: 'number' }
+          - { label: 'Grams Fats', name: 'gramsFats', widget: 'number' }
+          - { label: 'Grams Sugar', name: 'gramsSugar', widget: 'number' }
+          - { label: 'Grams Fiber', name: 'gramsFiber', widget: 'number' }
+          - {
+              label: 'Milligrams Sodium',
+              name: 'milligramsSodium',
+              widget: 'number',
+            }
+
+      - { label: 'Credit Link', name: 'creditLink', widget: 'string' }
