@@ -39,7 +39,7 @@ collections:
           - { label: 'Text', name: 'text', widget: 'string' }
           - { label: 'URL', name: 'url', widget: 'image' }
 
-      - label: 'Ingredients'
+      - label: 'Ingredient Groups'
         name: 'ingredientGroups'
         widget: 'list'
         fields:
