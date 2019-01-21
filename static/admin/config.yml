@@ -14,6 +14,8 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'recipe' }
 
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
+
       - { label: 'Title', name: 'title', widget: 'string' }
 
       - label: 'Metadata'
