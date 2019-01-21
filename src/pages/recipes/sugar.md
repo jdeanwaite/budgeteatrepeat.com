@@ -17,7 +17,7 @@ ingredientGroups:
 directions:
   - name: The Sugar
     steps:
-      - body: Measure the sugar. Poor in to bowl. Enjoy.
+      - body: Measure the **sugar**. Poor in to bowl. Enjoy.
 nutrition:
   gramsCarbs: '0'
   gramsFats: '0'
