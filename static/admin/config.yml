@@ -14,6 +14,8 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'recipe' }
 
+      - { label: 'Story', name: 'story', widget: 'markdown' }
+
       - label: 'Metadata'
         name: 'metadata'
         widget: 'object'
@@ -48,46 +50,42 @@ collections:
             name: 'ingredients'
             widget: 'list'
             fields:
-              - label: 'Ingredient'
-                name: 'ingredient'
-                widget: 'object'
-                fields:
-                  - { label: 'Amount', name: 'amount', widget: 'number' }
-                  - label: 'Unit'
-                    name: 'unit'
-                    widget: 'select'
-                    options:
-                      [
-                        '',
-                        'tsp',
-                        'tbsp',
-                        'fl',
-                        'cup',
-                        'pint',
-                        'quart',
-                        'gallon',
-                        'ml',
-                        'l',
-                        'lb',
-                        'oz',
-                        'mg',
-                        'g',
-                        'kg',
-                        'mm',
-                        'cm',
-                        'm',
-                        'in',
-                        'small',
-                        'medium',
-                        'large',
-                      ]
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Price', name: 'price', widget: 'number' }
-                  - {
-                      label: 'Substitutions/Notes',
-                      name: 'notes',
-                      widget: 'string',
-                    }
+              - { label: 'Amount', name: 'amount', widget: 'number' }
+              - label: 'Unit'
+                name: 'unit'
+                widget: 'select'
+                options:
+                  [
+                    '',
+                    'tsp',
+                    'tbsp',
+                    'fl',
+                    'cup',
+                    'pint',
+                    'quart',
+                    'gallon',
+                    'ml',
+                    'l',
+                    'lb',
+                    'oz',
+                    'mg',
+                    'g',
+                    'kg',
+                    'mm',
+                    'cm',
+                    'm',
+                    'in',
+                    'small',
+                    'medium',
+                    'large',
+                  ]
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Price', name: 'price', widget: 'number' }
+              - {
+                  label: 'Substitutions/Notes',
+                  name: 'notes',
+                  widget: 'string',
+                }
 
       - label: 'Directions'
         name: 'directions'
@@ -98,12 +96,8 @@ collections:
             name: 'steps'
             widget: 'list'
             fields:
-              - label: 'Step'
-                name: 'step'
-                widget: 'object'
-                fields:
-                  - { label: 'Text', name: 'text', widget: 'string' }
-                  - { label: 'Tips', name: 'tips', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'string' }
+              - { label: 'Tips', name: 'tips', widget: 'string' }
 
       - label: 'Nutrition Facts'
         name: 'nutrition'
