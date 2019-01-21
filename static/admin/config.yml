@@ -40,14 +40,14 @@ collections:
           - { label: 'URL', name: 'url', widget: 'image' }
 
       - label: 'Ingredients'
-        name: 'ingredients'
+        name: 'ingredientGroups'
         widget: 'list'
         fields:
-          - label: 'Ingredient Group'
-            name: 'ingredientGroup'
+          - { label: 'Ingredient Group Name', name: 'title', widget: 'string' }
+          - label: 'Ingredients'
+            name: 'ingredients'
             widget: 'list'
             fields:
-              - { label: 'Title', name: 'title', widget: 'string' }
               - label: 'Ingredient'
                 name: 'ingredient'
                 widget: 'object'
@@ -93,21 +93,17 @@ collections:
         name: 'directions'
         widget: 'list'
         fields:
-          - label: 'Category'
-            name: 'categories'
+          - { label: 'Category Name', name: 'name', widget: 'string' }
+          - label: 'Steps'
+            name: 'steps'
             widget: 'list'
             fields:
-              - { label: 'Name', name: 'name', widget: 'string' }
-              - label: 'Steps'
-                name: 'steps'
-                widget: 'list'
+              - label: 'Step'
+                name: 'step'
+                widget: 'object'
                 fields:
-                  - label: 'Step'
-                    name: 'step'
-                    widget: 'object'
-                    fields:
-                      - { label: 'Text', name: 'text', widget: 'string' }
-                      - { label: 'Tips', name: 'tips', widget: 'string' }
+                  - { label: 'Text', name: 'text', widget: 'string' }
+                  - { label: 'Tips', name: 'tips', widget: 'string' }
 
       - label: 'Nutrition Facts'
         name: 'nutrition'
