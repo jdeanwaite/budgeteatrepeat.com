@@ -14,8 +14,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'recipe' }
 
-      - { label: 'Story', name: 'story', widget: 'markdown' }
-
       - label: 'Metadata'
         name: 'metadata'
         widget: 'object'
@@ -33,6 +31,8 @@ collections:
               name: 'actualServings',
               widget: 'number',
             }
+
+      - { label: 'Story', name: 'body', widget: 'markdown' }
 
       - label: 'Photo'
         name: 'photo'
@@ -84,7 +84,7 @@ collections:
               - {
                   label: 'Substitutions/Notes',
                   name: 'notes',
-                  widget: 'string',
+                  widget: 'text',
                 }
 
       - label: 'Directions'
@@ -96,8 +96,8 @@ collections:
             name: 'steps'
             widget: 'list'
             fields:
-              - { label: 'Text', name: 'text', widget: 'string' }
-              - { label: 'Tips', name: 'tips', widget: 'string' }
+              - { label: 'Text', name: 'body', widget: 'markdown' }
+              - { label: 'Tips', name: 'tips', widget: 'text' }
 
       - label: 'Nutrition Facts'
         name: 'nutrition'
